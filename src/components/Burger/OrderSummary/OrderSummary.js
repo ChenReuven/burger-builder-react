@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import Button from '../../UI/Button/Button';
 
 const orderSummary = props => {
     const IngredientsSummary = Object.keys(props.ingredients)
@@ -15,7 +16,10 @@ const orderSummary = props => {
             <ul>
                 {IngredientsSummary}
             </ul>
+            <p><strong>Total Price: {props.totalPrice}</strong></p>
             <p>Are You Want To Checkout?</p>
+            <Button type="Danger" clicked={props.cancel}>Cancel</Button>
+            <Button type="Success" clicked={props.success}>Order</Button>
         </Fragment>
     );
 };
